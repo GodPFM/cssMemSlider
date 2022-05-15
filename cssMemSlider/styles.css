@@ -213,6 +213,9 @@ input {
 }
 
 @media screen and (max-width: 920px) {
+  .slider__wrapper {
+    width: 80%;
+  }
   .slider__buttons label a {
     width: 1.6rem;
     height: 1.6rem;
@@ -233,5 +236,11 @@ input {
       "text";
     align-items: center;
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .slider__wrapper {
+    width: 90%;
   }
 }
