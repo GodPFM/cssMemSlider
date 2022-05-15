@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(assets/jlb7LB.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slider__wrapper {
+  padding: 2%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 10%;
+  width: 60%;
+  text-align: center;
+  background-color: steelblue;
+}
+
+
+/* input {
+  display: none;
+} */
+
+.slider__memes > img{
+  display: none;
+}
+
+.slider__text > .text {
+  display: none;
+}
+
+#slide1:checked ~ .slider__memes > img:first-child,
+#slide2:checked ~ .slider__memes > img:nth-child(2),
+#slide3:checked ~ .slider__memes > img:nth-child(3),
+#slide4:checked ~ .slider__memes > img:nth-child(4),
+#slide5:checked ~ .slider__memes > img:last-child {
+  display: unset;
+}
+
+#slide1:checked ~ .slider__text > .text:first-child,
+#slide2:checked ~ .slider__text > .text:nth-child(2),
+#slide3:checked ~ .slider__text > .text:nth-child(3),
+#slide4:checked ~ .slider__text > .text:nth-child(4),
+#slide5:checked ~ .slider__text > .text:last-child {
+  display: unset;
+}
