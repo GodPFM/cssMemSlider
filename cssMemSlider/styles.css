@@ -43,8 +43,8 @@ input {
 .slider__buttons {
   grid-area: btns;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .slider__buttons label {
@@ -113,14 +113,15 @@ input {
 }
 
 .slider__text {
+  justify-self: flex-start;
   grid-area: text;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin-left: 1.2rem;
   align-items: center;
   overflow: hidden;
   transition: all 0.4s ease-in-out;
+  text-align: left;
 }
 
 .text {
@@ -227,6 +228,15 @@ input {
 }
 
 @media screen and (max-width: 768px) {
+
+  .slider__buttons {
+    justify-content: center;
+  }
+
+  .slider__text {
+    justify-self: center;
+
+  }
   
   .slider__wrapper {
     margin-top: 20%;
