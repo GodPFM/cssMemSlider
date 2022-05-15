@@ -6,9 +6,9 @@
 
 body {
   background: url(assets/jlb7LB.jpg);
-  background-size: cover;
+  background-size: autoпш;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
   
 }
 
@@ -124,6 +124,7 @@ input {
 }
 
 .text {
+  font-family: "Noto Sans", sans-serif;
   flex-shrink: 0;
   overflow: hidden;
   height: 100%;
@@ -209,4 +210,28 @@ input {
   opacity: 1;
   transform: translateY(-400%);
   transition: all 0.4s ease-in-out;
+}
+
+@media screen and (max-width: 920px) {
+  .slider__buttons label a {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  .slider__buttons > label:hover > .slider__button{
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .slider__wrapper {
+    margin-top: 20%;
+    grid-template-areas:
+      "img"
+      "btns"
+      "text";
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
 }
