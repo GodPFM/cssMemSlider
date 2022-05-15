@@ -116,6 +116,7 @@ input {
   grid-area: text;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   margin-left: 20px;
   align-items: center;
   overflow: hidden;
@@ -123,10 +124,12 @@ input {
 }
 
 .text {
-  display: none;
+  flex-shrink: 0;
+  overflow: hidden;
+  height: 100%;
   white-space: nowrap;
   width: 100%;
-  transform: translateY(15rem);
+  transform: translateY(0);
   opacity: 0;
   color: white;
   transition: all 0.4s ease-in-out;
@@ -182,15 +185,28 @@ input {
   transition: 0.3s ease-in-out;
 }
 
-#slide1:checked ~ .slider__text > .text:first-child,
-#slide2:checked ~ .slider__text > .text:nth-child(2),
-#slide3:checked ~ .slider__text > .text:nth-child(3),
-#slide4:checked ~ .slider__text > .text:nth-child(4),
-#slide5:checked ~ .slider__text > .text:last-child {
-  display: unset;
-  margin-top: 0px;
+#slide1:checked ~ .slider__text > .text:first-child {
   opacity: 1;
-  order: -1;
   transform: translateY(0);
+  transition: all 0.4s ease-in-out;
+}
+#slide2:checked ~ .slider__text > .text:nth-child(2) {
+  opacity: 1;
+  transform: translateY(-100%);
+  transition: all 0.4s ease-in-out;
+}
+#slide3:checked ~ .slider__text > .text:nth-child(3) {
+  opacity: 1;
+  transform: translateY(-200%);
+  transition: all 0.4s ease-in-out;
+}
+#slide4:checked ~ .slider__text > .text:nth-child(4){
+  opacity: 1;
+  transform: translateY(-300%);
+  transition: all 0.4s ease-in-out;
+}
+#slide5:checked ~ .slider__text > .text:last-child {
+  opacity: 1;
+  transform: translateY(-400%);
   transition: all 0.4s ease-in-out;
 }
