@@ -12,27 +12,123 @@ body {
   height: 100vh;
 }
 
+.slider {
+  overflow: hidden;
+}
+
+.slider__container {
+  height: 60vh;
+}
+
 .slider__wrapper {
+  position: relative;
   padding: 2%;
   height: 100%;
   margin: 0 auto;
   margin-top: 10%;
   width: 60%;
   text-align: center;
-  background-color: steelblue;
+  background-color: rgb(80 69 56 / 83%);
+  border-radius: 1.2rem;
+
+  display: grid;
+  grid-template-areas:
+    "img img"
+    "text btns";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 5fr 1fr;
+  row-gap: 0.6rem ;
 }
 
-
-/* input {
+input {
   display: none;
+}
+
+.slider__buttons {
+  grid-area: btns;
+}
+
+.slider__buttons label{
+  display: inline-block;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+}
+
+.slider__buttons label::after{
+  content: '';
+  position: absolute;
+  border: 0.2rem solid #c78a24;
+  width: 1rem;
+  height: 1rem;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: #c78a24;
+  transform: translate(-50%, -50%);
+}
+
+.slider__buttons label::before{
+  content: '';
+  z-index: 0;
+  position: absolute;
+  width: 0rem;
+  height: 0rem;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: black;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
+}
+
+.slider__buttons label:hover::before {
+  background-color: white;
+  z-index: 999;
+  width: 1rem;
+  height: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.slider__buttons label:hover::before {
+  background-color: white;
+}
+
+/* .slider__buttons label:active::after {
+  background-color: black;
 } */
 
-.slider__memes > img{
+.slider__memes {
+  position: relative;
+  width: 95%;
+  height: 50vh;
+  grid-area: img;
+}
+
+.slider__memes > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: none;
+}
+
+.slider__text {
+  grid-area: text;
 }
 
 .slider__text > .text {
-  display: none;
+  display: none
+}
+
+#slide1:checked ~ .slider__buttons > label:first-child::after,
+#slide2:checked ~ .slider__buttons > label:nth-child(2)::after,
+#slide3:checked ~ .slider__buttons > label:nth-child(3)::after,
+#slide4:checked ~ .slider__buttons > label:nth-child(4)::after,
+#slide5:checked ~ .slider__buttons > label:nth-child(5)::after {
+  background-color: unset;
+  transition: all 0.2s ease-in-out;
 }
 
 #slide1:checked ~ .slider__memes > img:first-child,
