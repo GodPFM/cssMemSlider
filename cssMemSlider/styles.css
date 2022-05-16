@@ -235,7 +235,7 @@ input {
 
   .slider__text {
     justify-self: center;
-
+    text-align: center;
   }
   
   .slider__wrapper {
